@@ -1,0 +1,401 @@
+@charset "utf-8";
+
+:root {
+    --NotoSans: "Noto Sans KR", sans-serif;
+    --Montserrat: "Montserrat", sans-serif;
+    --Montaga: "Montaga", serif;
+    --main-color: #c27a34;
+}
+
+body{
+  font-family: "Noto Sans KR", "Montserrat", "Montaga", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: #000;
+}
+
+#wrap{
+  overflow-x: hidden;
+  min-width: 320px;
+}
+
+.inner{
+    max-width: 1640px;
+		margin: 0 auto;
+		padding: 0 20px;
+}
+
+/*header*/
+header{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 999;
+}
+header .inner{
+	max-width: 1740px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+header h1{
+	padding: 20px 0;
+}
+header .gnb{
+	display: flex;
+	color: #fff;
+	font-family: var(--Montserrat);
+}
+header .gnb > li > a{
+	display: block;
+	font-size: 2rem;
+	padding: 10px 50px;
+}
+header .gnb > li.active > a{
+	color: #c27a34 !important;
+}
+header.active .gnb > li > a{
+	color: #000;
+}
+header.active h1 img{
+ filter: invert(1);
+}
+header .ham{
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	font-size: 0;
+	background: transparent;
+	position: relative;
+	display: none;
+}
+header .ham::before{
+	content: "";
+	width: 100%;
+	height: 3px;
+	background-color: #fff;
+	position: absolute;
+	top: 8px;
+	left: 0;
+}
+header .ham::after{
+	content: "";
+	width: 100%;
+	height: 3px;
+	background-color: #fff;
+	position: absolute;
+	bottom: 8px;
+	left: 0;
+}
+header .mgnb-wrap{
+	position: fixed;
+	top: 0;
+	left: 100%;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	padding: 150px 50px;
+}
+header .mgnb{
+	border-top: 1px solid #000;
+	position: relative;
+}
+header .mgnb li{
+	padding: 20px 0;
+	border-bottom: 1px solid #ccc;
+}
+header .mgnb li a{
+	font-size: 3rem;
+	font-family: var(--Montaga);
+}
+.mgnb-close{
+	display: inline-block;
+	font-size: 5rem;
+	font-weight: 300;
+	position: absolute;
+	top: 60px;
+	right: 50px;
+	cursor: pointer;
+}
+header .reservation{
+	border: 1px solid rgba(255, 255, 255, .5);
+	font-family: var(--Montserrat);
+	padding: 10px 20px 10px 60px;
+	background: url(../images/icon_reservation.png) no-repeat 20px center ;
+	color: #fff;
+}
+header.active .reservation{
+	background-color: #000;
+	color: #fff;
+}
+
+
+@media(max-width:1024px){
+	header .gnb{
+		display: none;
+	}
+	header .reservation{
+		position: absolute;
+		left: 50%;
+		top: 80vh;
+		transform: translateX(-50%);
+	}
+	header .ham{
+		display: block;
+	}
+
+}
+
+/*visual*/
+.visual{
+
+	color: #fff;
+}
+.visual video{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url(../images/section1_bg.jpg) no-repeat center / cover;
+}
+.visual .visual-txt{
+	position: absolute;
+	text-align: center;
+	top: 40%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.visual-txt h2{
+	font-size: 8rem;
+	font-family: var(--Montaga);
+	font-weight: 400;
+	white-space: nowrap;
+}
+.visual-txt p{
+	font-size: 2rem;
+	padding-top: 20px;
+}
+
+#fp-nav ul li a span{
+	background-color: #000;
+}
+
+#fp-nav ul li .fp-tooltip{
+	color: #000;
+}
+
+@media(max-width:1024px){
+.visual-txt h2{
+	font-size: 6.5rem;
+}
+.visual-txt p{
+	font-size: 1.8rem;
+}
+}
+
+/*공통*/
+.section h3{
+	font-family: var(--Montaga);
+	font-size: 6rem;
+	padding-bottom: 30px;
+	font-weight: 400;
+}
+.section h3::before{
+	content: "Restaurant o’neul";
+	font-family: var(--Montserrat);
+	font-size: 1.4rem;
+	color: var(--main-color);
+	letter-spacing: 5px;
+	display: block;
+}
+
+/*value*/
+.value .inner{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+.value .inner > div{
+	width: calc(100% / 2);
+}
+.value-txt .p1{
+	padding: 0 0 30px;
+	color: rgba(0, 0, 0, 0.5);
+}
+.value-txt .btn-more a{
+	transition: all 0.5s;
+	display: inline-block;
+	font-family: var(--Montaga);
+	padding: 10px 50px;
+	background: #000;
+	color: #fff;
+	text-transform: uppercase;
+}
+.value-txt .btn-more:hover a{
+	background-color: var(--main-color);
+}
+.value-img img{
+	width: 100%;
+	display: block;
+}
+
+@media(max-width:1024px){
+	.value{
+		padding: 100px 0;
+	}
+	.value .inner > div{
+	 width: 100%;
+	 text-align: center;
+  }
+	.value-img{
+		padding-top: 30px;
+	}
+}
+
+/*menu*/
+.menu{
+	background-color: rgba(194, 122, 52, 0.1);
+	padding: 50px 20px;
+}
+.menu-txt h3{
+	text-align: center;
+}
+.menu-list ul > li{
+	position: relative;
+}
+.menu-list ul > li > a{
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 10px 80px;
+	color: #fff;
+	font-size: 3rem;
+	font-family: var(--Montaga);
+	white-space: nowrap;
+	z-index: 1;
+	display: block;
+	text-align: center;
+}
+.menu-list ul > li > a::before{
+	content: "";
+	width: 0;
+	height: 100%;
+  background-color: #c27a34;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50% , -50%);
+	z-index: -1;
+	text-align: center;
+	transition: all 0.5s;
+}
+
+.menu-list ul > li:hover > a::before{
+	width: 100%;
+}
+.menu-list ul > li:nth-child(2n-1) > a{
+	margin-top: 20px;
+}
+.menu-list ul li:nth-child(2n-1){
+	padding-top: 40px;
+}
+.menu-list img{
+	width: 100%;
+	display: block;
+}
+
+
+
+/*room*/
+.room{
+	padding: 30px 0;
+	max-width: 1640px;
+	margin: 0 auto;
+}
+.room h3{
+	text-align: center;
+}
+.room-list ul li img{
+	width: 100%;
+	display: block;
+}
+.room-list ul li{
+	position: relative;
+}
+.room-list ul li p{
+ padding: 15px 30px 0px;
+ font-family: var(--Montserrat);
+ background: #fff;
+ position: absolute;
+ bottom: 0;
+ left: 50%;
+ transform: translateX(-50%);
+}
+
+/*footer*/
+footer{
+	padding: 100px 0;
+	background-color: #383431;
+}
+footer .inner{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+footer .address{
+	display: inline-block;
+	padding-top: 20px;
+	color: rgb(154, 142, 135, 0.5);
+}
+footer .address span {
+  color: #9A8E87;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+footer .address span:first-child{
+	padding-left: 0;
+}
+footer .copy{
+	padding-top: 20px;
+	color: #7B6A59;
+	font-family: var(--Montaga);
+}
+footer ul{
+	display: flex;
+	justify-content: flex-end;
+	gap: 20px;
+}
+
+
+
+@media (max-width:1024px){
+	footer .inner > *{
+		width: 100%;
+		text-align: center;
+	}
+	footer ul{
+		justify-content: center;
+		padding-top: 20px;
+	}
+}
+
+#fp-nav ul li:last-of-type{
+  display: none;
+}
+#fp-nav.active ul li a span{
+  background-color: #000;
+}
+#fp-nav.active ul li .fp-tooltip{
+  color: #000;
+}
+
+@media(max-width:1024px){
+  #fp-nav {display: none !important;}
+}
